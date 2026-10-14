@@ -73,7 +73,7 @@ class SoulSiphon(Attack):
     def use(self, player, enemy):
         if player.souls > 0:
                 damage = dice(8, player.level) + player.level
-                health = ceil(damage, 2)
+                health = int(ceil(damage) / 2)
                 player.souls -= 1
                 if player.health != player.health_max:
                     input(f'You consumed a soul to damage enemy {enemy} for {damage} damage! \
